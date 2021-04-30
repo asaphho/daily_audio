@@ -12,6 +12,8 @@ def start_detecting(input_pin):
     GPIO.setup(input_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(input_pin, GPIO.RISING, bouncetime=5000)
 
+start_detecting(INPUT_PIN)
+
 while True:
     if GPIO.event_detected(INPUT_PIN):
         date_str = datetime.strftime(datetime.now(), '%Y-%m-%d')
