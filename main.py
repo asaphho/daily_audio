@@ -15,7 +15,7 @@ while True:
     if GPIO.event_detected(10) and not PLAYING:
         PLAYING = True
         date_str = datetime.strftime(datetime.now(), '%Y-%m-%d')
-        os.system(f'mpg321 ~/Downloads/{date_str}.mp3')
+        os.system(f'mpg321 /home/pi/Downloads/{date_str}.mp3')
         sleep(30)
         PLAYING = False
 
