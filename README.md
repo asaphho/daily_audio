@@ -37,8 +37,7 @@ bash setup.sh
 
 During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
 
-**IMPORTANT: Do not run the setup script a second time. This is because the script adds a line to the ~/.bashrc file. 
-It is also not recommended to install any more programs or run anything else on the Pi after this is done.**
+**It is not recommended to install any more programs or run anything else on the Pi after this is done.**
 
 <h1>Adding audio files</h1>
 All audio files for playing should be placed in /home/pi/Downloads. Do not place the files in subfolders inside Downloads. The filenames are to be according to the format of YYYY-MM-DD.mp3. Examples:
