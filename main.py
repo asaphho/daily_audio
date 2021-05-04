@@ -3,7 +3,7 @@ from datetime import datetime
 import os
 from time import sleep
 
-INPUT_PIN = 10
+INPUT_PIN = 37
 SLEEP_TIME = 30
 
 GPIO.setwarnings(False)
