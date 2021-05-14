@@ -2,7 +2,6 @@
 sudo apt-get update
 sudo apt install vim
 pip3 install RPi.GPIO
-pip3 install mutagen
 pip3 install datetime
 sudo apt-get install mpg321
 if [[ $(cat /home/pi/.bashrc) != */daily_audio/main.py* ]]
