@@ -32,7 +32,7 @@ git clone https://github.com/asaphho/daily_audio.git
 
 Run the setup script to install the required packages for the Python script:
 ```sh
-bash setup.sh
+bash /home/pi/daily_audio/setup.sh
 ```
 
 During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
