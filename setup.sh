@@ -4,10 +4,7 @@ sudo apt install vim
 pip3 install RPi.GPIO
 pip3 install datetime
 sudo apt-get install mpg321
-if [[ $(cat /home/pi/.bashrc) != */daily_audio/main.py* ]]
-then
-sudo echo "python3 /home/pi/daily_audio/main.py &" >> /home/pi/.bashrc
-fi
+
 echo "Check every day for corresponding file and download automatically? [y/n]"
 while true
 do
@@ -30,6 +27,10 @@ else
   echo "Please enter 'y' or 'n'."
 fi
 done
+
+sudo sed -i '/main.py/d' /home/pi/.bashrc
+sudo echo "python3 /home/pi/daily_audio/main.py &" >> /home/pi/.bashrc
+
 echo "Setup is complete. Device will reboot in 3 seconds."
 sleep 3
 sudo reboot
