@@ -2,6 +2,7 @@
 if [[ $CURL == y ]]
 then
   cd /home/pi/Downloads
-  curl --output $(python3 /home/pi/daily_audio/print_filename.py) $CURL_URL/sample2.mp3
+  filename=$(date +'%Y-%m-%d').mp3
+  curl --output $filename $CURL_URL/$filename
   cd /home/pi
 fi
