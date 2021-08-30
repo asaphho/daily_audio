@@ -35,17 +35,13 @@ Run the setup script to install the required packages for the Python script:
 bash /home/pi/daily_audio/setup.sh
 ```
 
-During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
-
+During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. 
+This version will automatically download the audio files from a specified URL each day, if the file for the corresponding day is not found. Specify the URL of the directory to download from. For example, if the file for any given date is found at https://somedirectory/YYYY-MM-DD.mp3 (the date in the URL has to be in this format. It is hard-coded), then the URL to be entered is https://somedirectory (DO NOT include a trailing slash).
+After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
 **It is not recommended to install any more programs or run anything else on the Pi after this is done.**
-
-<h1>Adding audio files</h1>
-All audio files for playing should be placed in /home/pi/Downloads. Do not place the files in subfolders inside Downloads. The filenames are to be according to the format of YYYY-MM-DD.mp3. Examples:
-<ul>
-  <li>2021-04-29.mp3</li>
-  <li>2021-05-02.mp3</li>
-  <li>2022-10-01.mp3</li>
- </ul>
  
 <h1>Usage</h1>
-Once the Pi has completed booting up, the python script will run and a chime will sound to indicate that the program is ready. Pressing the button will play the file corresponding to the date if a file of the right format corresponding to the date has been placed in /home/pi/Downloads. In this current version I have implemented a bouncetime of 10 seconds after each button input. If the button is pressed a second time more than 10 seconds after pressing it the first time but the file is still playing, the file will play again immediately upon finishing.
+Once the Pi has completed booting up, the python script will run and a chime will sound to indicate that the program is ready. Pressing the button will play the file corresponding to the date if a file of the right format corresponding to the date has been placed in /home/pi/Downloads. If the file does not exist, it will download the file from the remote URL. In this current version I have implemented a bouncetime of 10 seconds after each button input. If the button is pressed a second time more than 10 seconds after pressing it the first time but the file is still playing, the file will play again immediately upon finishing.
+
+<h1>Audio files cleanup and updating</h1>
+Whenever the python script runs, all .mp3 files in /home/pi/Downloads will be removed. This is to allow the Pi to get the new version of an audio file if it is updated on the remote source (the one specified by the URL). If a file for the day was updated after the Pi had already pulled the old version, you must turn off the Pi and turn it on again in order to get the updated file.
