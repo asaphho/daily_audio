@@ -3,6 +3,7 @@ from datetime import datetime
 import os
 
 INPUT_PIN = 37
+os.system('rm /home/pi/Downloads/*mp3')
 
 
 def update():
@@ -18,6 +19,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(INPUT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 GPIO.add_event_detect(INPUT_PIN, GPIO.RISING, bouncetime=10000)
 update()
+os.system('mpg321 /home/pi/daily_audio/fixtures/ready.mp3')
 
 while True:
     if GPIO.event_detected(INPUT_PIN):

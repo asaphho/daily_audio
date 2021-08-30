@@ -35,8 +35,9 @@ Run the setup script to install the required packages for the Python script:
 bash /home/pi/daily_audio/setup.sh
 ```
 
-During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
-
+During the installation of packages, you may be prompted a few times on whether you wish to continue. Continue every time. 
+This version has an option to automatically download the audio files from a specified URL each day, if the file for the corresponding day is not found.
+After the installation is done, the Pi will reboot. The Python script will run on boot. The Python script requires the Pi to be connected to the Internet in order to be able to get the date, so you must ensure that it will connect to the Internet upon booting up.
 **It is not recommended to install any more programs or run anything else on the Pi after this is done.**
 
 <h1>Adding audio files</h1>
