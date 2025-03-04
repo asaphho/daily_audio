@@ -3,7 +3,10 @@ from datetime import datetime
 import os
 
 INPUT_PIN = 37
-os.system('rm /home/pi/Downloads/*mp3')
+try:
+    os.system('rm /home/pi/Downloads/*mp3')
+except Exception:
+    pass
 
 
 def update():
